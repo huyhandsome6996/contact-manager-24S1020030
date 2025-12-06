@@ -31,7 +31,23 @@ def view_contacts():
 
 
 def search_contact():
-    pass
+    print("\n--- TÌM KIẾM LIÊN HỆ ---")
+    if not phonebook:
+        print("Danh bạ hiện đang trống, không có gì để tìm.")
+        return
+
+    name = input("Nhập tên cần tìm: ").strip().lower()
+
+    found = False
+    for c in phonebook:
+        if c["name"].lower() == name:
+            print(f" Số của {c['name']}: {c['phone']}")
+            found = True
+            break
+
+    if not found:
+        print("Không tìm thấy.")
+
 
 
 def main():
