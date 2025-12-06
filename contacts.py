@@ -3,7 +3,21 @@ phonebook = []
 
 
 def add_contact():
-    print("Đã thêm liên hệ.")
+    print("\n--- THÊM LIÊN HỆ MỚI ---")
+    name = input("Nhập tên: ").strip()
+    phone = input("Nhập số điện thoại: ").strip()
+
+    if not name or not phone:
+        print("Tên và số điện thoại không được để trống.")
+        return
+
+    contact = {
+        "name": name,
+        "phone": phone
+    }
+    phonebook.append(contact)
+    print(" Đã thêm liên hệ.")
+
 
 
 def view_contacts():
